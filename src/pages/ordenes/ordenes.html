@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-centerS>Ordenes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-list *ngIf="UP.activo()">
+    <button ion-item
+            *ngFor="let orden of CP.ordenes"
+             [navPush]="ordesDetalle"
+              [navParams]="{orden:orden}">
+          <strong>Orden ID:</strong>
+          {{orden.id}}
+    </button>
+  </ion-list>
+
+</ion-content>
